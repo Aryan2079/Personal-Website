@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Bhattarai - Personal Website</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+body {
+font-family: 'JetBrains Mono', monospace;
+margin: 0;
+padding: 0;
+line-height: 1.6;
+color: #e0f7fa;
+background: linear-gradient(-45deg, #1a1a1a, #2d2d2d, #1a1a1a, #2d2d2d);
+background-size: 400% 400%;
+animation: gradientBG 15s ease infinite;
+
+}
+
+@keyframes gradientBG {
+0% {
+background-position: 0% 50%;
+}
+
+50% {
+    background-position: 100% 50%;
+}
+
+100% {
+    background-position: 0% 50%;
+}
+}
+
+.blob {
+position: absolute;
+width: 200px;
+height: 200px;
+background: rgba(255, 255, 255, 0.2);
+filter: blur(100px);
+animation: moveBlobs 20s infinite;
+border-radius: 50%;
+}
+
+.blob1 {
+top: 10%;
+left: 30%;
+animation-duration: 25s;
+}
+
+.blob2 {
+top: 50%;
+left: 70%;
+animation-duration: 28s;
+}
+
+.blob3 {
+top: 80%;
+left: 20%;
+animation-duration: 30s;
+}
+
+@keyframes moveBlobs {
+0% {
+transform: translate(0, 0);
+}
+50% {
+    transform: translate(100px, 100px);
+}
+
+100% {
+    transform: translate(0, 0);
+}
+}
+
+.container {
+position: relative;
+z-index: 1;
+width: 80%;
+max-width: 900px;
+margin: 0 auto;
+padding: 20px;
+background-color: rgba(34, 47, 62, 0.95);
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+border-radius: 12px;
+backdrop-filter: blur(10px);
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+header {
+text-align: center;
+margin-bottom: 40px;
+padding: 20px;
+border-radius: 12px;
+background-color: rgba(22, 32, 44, 0.95);;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(10px);
+}
+
+header h1 {
+font-size: 3rem;
+margin: 0;
+color: #ffffff;
+}
+
+header p {
+font-size: 1.2rem;
+margin-top: 10px;
+color: #c1f4f7;
+}
+
+nav {
+background-color: rgba(22, 32, 44, 0.95);
+padding: 10px 0;
+border-radius: 8px;
+text-align: center;
+margin-bottom: 20px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(10px);
+}
+
+nav a {
+color: #ffffff;
+text-decoration: none;
+font-size: 1.2rem;
+margin: 0 15px;
+transition: color 0.3s ease, transform 0.2s ease;
+display: inline-block;
+position: relative;
+padding: 8px 16px;
+}
+
+nav a
+{
+color: #ffdd57;
+transform: translateY(-2px);
+}
+
+nav a::before {
+content: '';
+position: absolute;
+width: calc(100% - 32px);
+height: 2px;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+background-color: #ffdd57;
+transform-origin: center;
+transition: transform 0.3s ease;
+}
+
+nav a:hover::before {
+transform: scaleX(1.1);
+}
+
+.section {
+margin-bottom: 40px;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(10px);
+}
+
+.section h2 {
+font-size: 2.5rem;
+color: #ffffff;
+border-bottom: 2px solid #ffdd57;
+padding-bottom: 5px;
+margin-bottom: 20px;
+}
+
+.section p {
+font-size: 1.1rem;
+line-height: 1.8;
+color: #e0f7fa;
+}
+
+#about {
+background-color: rgba(22, 32, 44, 0.95); /* Darker background for About Me section */
+}
+
+#projects {
+background-color: rgba(22, 32, 44, 0.95); /* Darker background for Projects section */
+}
+
+#contact {
+background-color: rgba(22, 32, 44, 0.95); /* Darker background for Contact section */
+}
+
+#resume {
+background-color: rgba(22, 32, 44, 0.95); /* Darker background for Resume section */
+}
+
+.projects-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+
+.project-card {
+background-color: rgba(0, 0, 0, 0.85); /* Darker black color for project cards */
+color: #e0f7fa;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+border-radius: 12px;
+padding: 20px;
+transition: all 0.3s ease;
+backdrop-filter: blur(10px);
+position: relative;
+}
+
+.project-card:hover{
+transform: translateY(-5px);
+box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-card:nth-child(2n) {
+background-color: rgba(12, 18, 25, 0.85); /* Darker black color for alternate project cards */
+}
+
+.project-card h3 {
+font-size: 1.5rem;
+margin-bottom: 10px;
+color: #ffffff;
+}
+
+.project-card p {
+font-size: 1rem;
+color: #d7fffa;
+margin-bottom: 15px;
+}
+
+.project-card a {
+color: #ffdd57;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s ease;
+}
+
+.project-card a:hover{
+color: #ffffff;
+}
+
+
+.contact-icons a {
+display: inline-block;
+margin: 10px;
+font-size: 1.5rem;
+color: #ffdd57;
+transition: color 0.3s ease;
+}
+
+.contact-icons a:hover{
+color: #ffffff;
+}
+
+.message-box {
+background-color: rgba(12, 18, 25, 0.95); /* Darker background for message box */
+color: #e0f7fa;
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+margin-top: 20px;
+backdrop-filter: blur(10px);
+}
+
+.message-box textarea {
+width: 100%;
+height: 100px;
+padding: 10px;
+margin-top: 10px;
+border: 1px solid #ddd;
+border-radius: 6px;
+resize: none;
+font-size: 1rem;
+color: #e0f7fa;
+background-color: rgba(22, 32, 44, 0.8);
+backdrop-filter: blur(5px);
+}
+
+.message-box button {
+background-color: #ffdd57;
+color: #fff;
+border: none;
+padding: 10px 20px;
+font-size: 1.2rem;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-top: 10px;
+backdrop-filter: blur(10px);
+}
+
+.message-box button:hover{
+background-color: #ffc107;
+}
+
+footer {
+text-align: center;
+padding: 20px;
+margin-top: 40px;
+background-color: rgba(22, 32, 44, 0.95);; /* Darker background for footer */
+border-radius: 12px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(10px);
+color: #ffffff;
+}
+
+footer p {
+margin: 0;
+color: #ffffff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+.container {
+width: 90%;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+.section h2 {
+    font-size: 2rem;
+}
+
+.project-card {
+    padding: 15px;
+}
+
+.message-box textarea {
+    font-size: 0.9rem;
+}
+}
+
+
+
+</style>
+</head>
+<body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+
+<div class="container">
+    <header>
+        <h1>Aryan Bhattarai</h1>
+        <p>👨‍💻 Engineering Student | 🌱 Learning MERN Stack | 📊 Data Science Enthusiast</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#resume">Resume</a>
+    </nav>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I'm Aryan Bhattarai, an engineering student based in Kathmandu, Nepal. I enjoy diving into the world of programming, focusing on web development using the MERN stack. Additionally, I have a growing interest in Python for data science applications. Living in Kathmandu provides me with a unique blend of culture and technology, shaping my perspective and ambitions. 🌍🖥️</p>
+        <p>Feel free to connect with me on social media or send me a message! 📩</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Weather App</h3>
+                <p>A weather forecasting application built using React and OpenWeather API.</p>
+                <a href="https://github.com/aryanbhattarai/weather-app" target="_blank">GitHub Repository</a>
+            </div>
+            <div class="project-card">
+                <h3>Personal Blog</h3>
+                <p>A blog platform built with the MERN stack. Features user authentication, CRUD operations, and more.</p>
+                <a href="https://github.com/aryanbhattarai/personal-blog" target="_blank">GitHub Repository</a>
+            </div>
+            <div class="project-card">
+                <h3>Data Science Dashboard</h3>
+                <p>A data visualization dashboard created using Python and Dash.</p>
+                <a href="https://github.com/aryanbhattarai/data-science-dashboard" target="_blank">GitHub Repository</a>
+            </div>
+            <div class="project-card">
+                <h3>Future Projects</h3>
+                <p>Coming Soon... 😉</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="contact-icons">
+            <a href="https://www.facebook.com/aaryan.bhattarai.564/" title="Facebook" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/_aryanbhattarai/" title="Instagram" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/aryan-bhattarai-16123b280/" title="LinkedIn" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="https://x.com/Aryanbrt78/" title="Twitter" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="https://github.com/Aryan2079/" title="GitHub" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
+        </div>
+
+        <div class="message-box">
+            <h3>Give Me a Message</h3>
+            <textarea placeholder="Write your message here..."></textarea>
+            <button>Send Message</button>
+        </div>
+    </section>
+
+    <section id="resume" class="section">
+        <h2>Resume</h2>
+        <p>You can download my resume <a href="resume.pdf" target="_blank">here</a>.</p>
+    </section>
+
+    <footer>
+         &copy; <span id="footerDate"></span> Aryan Bhattarai. All rights reserved.
+    </footer>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Smooth scrolling for navigation links
+    navLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Animating blobs
+    const blobs = document.querySelectorAll('.blob');
+
+    blobs.forEach((blob, index) => {
+        const animationDuration = 15 + index * 5; // Vary duration for different blobs
+        blob.style.animationDuration = `${animationDuration}s`;
+    });
+});
+
+
+    // Dynamic date in footer
+    const currentYear = new Date().getFullYear();
+    const footerDate = document.getElementById('footerDate');
+    footerDate.textContent = currentYear;
+
+    // Tooltips for social media icons
+    socialIcons.forEach((icon) => {
+        const platform = icon.getAttribute('title');
+        icon.setAttribute('aria-label', platform);
+        icon.addEventListener('mouseenter', () => {
+            icon.setAttribute('title', '');
+        });
+        icon.addEventListener('mouseleave', () => {
+            icon.setAttribute('title', platform);
+        });
+    });
+
+
+
+
+</script>
+</body>
+</html>
